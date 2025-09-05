@@ -1712,6 +1712,24 @@ body {
     }
 }
 
+/* Force remove any custom cursor elements */
+.custom-cursor,
+[class*="cursor"],
+[id*="cursor"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Ensure normal cursor behavior */
+* {
+    cursor: auto !important;
+}
+
+a, button, .nav-link, .btn {
+    cursor: pointer !important;
+}
+
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
