@@ -83,7 +83,7 @@ portfolio-website/
 
 ## 🌐 Live Demo
 
-Visit the live website: [Your GitHub Pages URL will go here]
+Visit the live website: [https://kartikdhoke7.github.io/portfolio-website/](https://kartikdhoke7.github.io/portfolio-website/)
 
 ## 📝 License
 
