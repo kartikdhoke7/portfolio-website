@@ -297,26 +297,6 @@ if (hero) {
     });
 }
 
-// Dynamic typing effect for hero title
-const typingElement = document.querySelector('.highlight');
-if (typingElement && typingElement.classList.contains('typing-text')) {
-    const text = typingElement.textContent;
-    typingElement.textContent = '';
-    typingElement.style.width = '0';
-    
-    let i = 0;
-    const typeWriter = () => {
-        if (i < text.length) {
-            typingElement.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
-    };
-    
-    // Start typing after a delay
-    setTimeout(typeWriter, 1000);
-}
-
 // Add scroll progress indicator
 const createScrollProgress = () => {
     const progressBar = document.createElement('div');
