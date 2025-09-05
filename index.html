@@ -318,11 +318,11 @@
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>kartikdhoke31@gmail.com</span>
+                            <a href="mailto:kartikdhoke31@gmail.com">kartikdhoke31@gmail.com</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span>+91 8830644610</span>
+                            <a href="tel:+918830644610">+91 8830644610</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
@@ -330,24 +330,29 @@
                         </div>
                         <div class="contact-item">
                             <i class="fab fa-linkedin"></i>
-                            <span>linkedin.com/in/kartikdhoke</span>
+                            <a href="https://linkedin.com/in/kartikdhoke" target="_blank">linkedin.com/in/kartikdhoke</a>
                         </div>
                     </div>
+                    <div class="quick-contact">
+                        <h4>Quick Contact</h4>
+                        <a href="mailto:kartikdhoke31@gmail.com?subject=Portfolio%20Contact&body=Hi%20Kartik,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect.%0D%0A%0D%0ABest%20regards," class="btn btn-outline">Send Email Directly</a>
+                    </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" action="https://formspree.io/f/xeojvqwr" method="POST">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Subject" required>
+                        <input type="text" name="subject" placeholder="Subject" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div class="form-status" id="form-status"></div>
                 </form>
             </div>
         </div>

@@ -93,29 +93,33 @@ document.addEventListener('DOMContentLoaded', () => {
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+        const formStatus = document.getElementById('form-status');
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
         
-        // Get form data
-        const formData = new FormData(this);
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const subject = this.querySelectorAll('input[type="text"]')[1].value;
-        const message = this.querySelector('textarea').value;
+        // Show loading state
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        formStatus.style.display = 'none';
         
-        // Basic validation
-        if (!name || !email || !subject || !message) {
-            showNotification('Please fill in all fields', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address', 'error');
-            return;
-        }
-        
-        // Simulate form submission
-        showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-        this.reset();
+        // Let the form submit naturally to Formspree
+        // We'll use a timeout to show a success message and reset the form
+        setTimeout(() => {
+            // Reset form after submission
+            this.reset();
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
+            
+            // Show success message
+            formStatus.className = 'form-status success';
+            formStatus.textContent = 'Thank you! Your message has been sent successfully. I\'ll get back to you soon!';
+            formStatus.style.display = 'block';
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 5000);
+        }, 2000); // Wait 2 seconds to simulate processing
     });
 }
 
