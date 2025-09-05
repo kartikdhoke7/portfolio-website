@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -34,28 +35,43 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-bg-animation">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+        </div>
         <div class="hero-container">
-            <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Kartik Subhash Dhoke</span></h1>
-                <p class="hero-subtitle">Electronics & Telecommunication Engineering Student | Data Science Enthusiast</p>
-                <p class="hero-description">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                <h1>Hi, I'm <span class="highlight typing-text">Kartik Subhash Dhoke</span></h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">Electronics & Telecommunication Engineering Student | Data Science Enthusiast</p>
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="500">
                     Third-year B.Tech student passionate about AI-driven solutions, machine learning, and embedded systems. 
                     Skilled in data analysis, prompt engineering, and developing innovative digital solutions.
                 </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#projects" class="btn btn-outline">View My Work</a>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="700">
+                    <a href="#contact" class="btn btn-primary pulse-btn">Get In Touch</a>
+                    <a href="#projects" class="btn btn-outline glow-btn">View My Work</a>
                 </div>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/kartikdhoke" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="mailto:kartikdhoke31@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                <div class="social-links" data-aos="fade-up" data-aos-delay="900">
+                    <a href="https://linkedin.com/in/kartikdhoke" class="social-link bounce-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link bounce-in" style="animation-delay: 0.1s"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link bounce-in" style="animation-delay: 0.2s"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:kartikdhoke31@gmail.com" class="social-link bounce-in" style="animation-delay: 0.3s"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="image-placeholder">
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+                <div class="image-placeholder floating-element">
                     <i class="fas fa-user-circle"></i>
+                    <div class="floating-icons">
+                        <i class="fas fa-code floating-icon" style="animation-delay: 0s;"></i>
+                        <i class="fas fa-brain floating-icon" style="animation-delay: 1s;"></i>
+                        <i class="fas fa-microchip floating-icon" style="animation-delay: 2s;"></i>
+                        <i class="fas fa-chart-line floating-icon" style="animation-delay: 3s;"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,9 +80,9 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-right" data-aos-delay="200">
                     <p>
                         I am a dedicated third-year B.Tech student in Electronics and Telecommunication Engineering 
                         with a minor in Data Science at K.K. Wagh Institute of Engineering Education and Research, Nashik. 
@@ -78,21 +94,21 @@
                         and enjoy working in collaborative teams to turn innovative ideas into impactful digital solutions.
                     </p>
                     <div class="about-stats">
-                        <div class="stat">
-                            <h3>87</h3>
+                        <div class="stat" data-aos="zoom-in" data-aos-delay="400">
+                            <h3 class="counter" data-target="87">0</h3>
                             <p>% ML Model Accuracy</p>
                         </div>
-                        <div class="stat">
-                            <h3>3+</h3>
+                        <div class="stat" data-aos="zoom-in" data-aos-delay="600">
+                            <h3 class="counter" data-target="3">0</h3>
                             <p>Major Projects</p>
                         </div>
-                        <div class="stat">
-                            <h3>4+</h3>
+                        <div class="stat" data-aos="zoom-in" data-aos-delay="800">
+                            <h3 class="counter" data-target="4">0</h3>
                             <p>Certifications</p>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
+                <div class="about-image" data-aos="fade-left" data-aos-delay="200">
                     <div class="image-placeholder">
                         <i class="fas fa-code"></i>
                     </div>
@@ -338,20 +354,27 @@
                         <a href="mailto:kartikdhoke31@gmail.com?subject=Portfolio%20Contact&body=Hi%20Kartik,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect.%0D%0A%0D%0ABest%20regards," class="btn btn-outline">Send Email Directly</a>
                     </div>
                 </div>
-                <form class="contact-form" action="https://formspree.io/f/xeojvqwr" method="POST">
+                <form class="contact-form" action="https://formspree.io/f/xovnpono" method="POST">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="subject" placeholder="Subject" required>
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                    </button>
                     <div class="form-status" id="form-status"></div>
                 </form>
             </div>
@@ -372,5 +395,14 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
