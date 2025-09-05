@@ -1715,10 +1715,28 @@ body {
 /* Force remove any custom cursor elements */
 .custom-cursor,
 [class*="cursor"],
-[id*="cursor"] {
+[id*="cursor"],
+div[style*="position: fixed"],
+div[style*="border-radius: 50%"],
+div[style*="background: var(--primary-color)"],
+div[style*="width: 20px"],
+div[style*="height: 20px"] {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+
+/* Remove any blue dots */
+*[style*="background: #6366f1"],
+*[style*="background: var(--primary-color)"] {
+    display: none !important;
+}
+
+/* Force remove any dynamically created elements that could be cursors */
+body > div:not([class]):not([id]) {
+    display: none !important;
 }
 
 /* Ensure normal cursor behavior */

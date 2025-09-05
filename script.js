@@ -317,4 +317,43 @@ const createScrollProgress = () => {
 // Initialize scroll progress indicator
 createScrollProgress();
 
+// Force remove any cursor elements that might exist
+const removeCursorElements = () => {
+    // Remove any elements that might be cursor dots
+    const suspiciousElements = document.querySelectorAll('div:not([class]):not([id])');
+    suspiciousElements.forEach(el => {
+        const style = window.getComputedStyle(el);
+        if (style.position === 'fixed' && 
+            (style.borderRadius === '50%' || style.borderRadius.includes('50%')) &&
+            (style.width === '20px' || style.height === '20px')) {
+            el.remove();
+        }
+    });
+    
+    // Remove elements with cursor-related classes
+    const cursorElements = document.querySelectorAll('.custom-cursor, [class*="cursor"], [id*="cursor"]');
+    cursorElements.forEach(el => el.remove());
+};
+
+// Run removal function multiple times to catch dynamically created elements
+setTimeout(removeCursorElements, 100);
+setTimeout(removeCursorElements, 500);
+setTimeout(removeCursorElements, 1000);
+
+// Watch for new elements being added
+const cursorObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+            if (node.nodeType === 1 && node.className && node.className.includes('cursor')) {
+                node.remove();
+            }
+        });
+    });
+});
+
+cursorObserver.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+
 console.log('🚀 Modern Portfolio loaded with enhanced animations and interactions!');
