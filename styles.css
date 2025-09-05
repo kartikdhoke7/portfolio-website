@@ -465,6 +465,28 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
+    border: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+}
+
+.highlight::before,
+.highlight::after {
+    display: none !important;
+}
+
+/* Ensure no typing effects */
+.highlight,
+.highlight * {
+    animation: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    box-shadow: none !important;
+}
+
+.hero-content h1 span {
+    border: none !important;
+    animation: none !important;
 }
 
 .hero-subtitle {
